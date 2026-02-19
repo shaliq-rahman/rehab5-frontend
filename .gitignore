@@ -31,3 +31,7 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Secrets
+.env
+.env.local
