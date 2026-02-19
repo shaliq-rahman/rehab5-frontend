@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* User requested brand colors */
+  --color-primary: #24a3ac;
+  --color-primary-dark: #1b7c83;
+  /* Darker shade of teal */
+  --color-secondary: #fd9820;
+  --color-accent: #e6f7f8;
+  /* Very light teal for backgrounds */
+  --color-primary-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    /* Keep it light as per image usually, or maybe dark mode later. For now, matching image which is light. */
+    --foreground: #171717;
+  }
+}
+
+/* Ensure clean/minimal look */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
