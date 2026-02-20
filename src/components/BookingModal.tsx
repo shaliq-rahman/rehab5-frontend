@@ -13,7 +13,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Script from "next/script";
 
-interface SlotItem { time: string; booked: boolean; }
+interface SlotItem { time: string; booked: boolean; passed?: boolean; }
 
 interface BookingModalProps { isOpen: boolean; onClose: () => void; }
 
@@ -292,28 +292,33 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                             </div>
                                         ) : (
                                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                                                {slots.length > 0 ? slots.map((slot, i) => (
-                                                    <button
-                                                        key={i}
-                                                        disabled={slot.booked}
-                                                        onClick={() => !slot.booked && setSelectedSlot(slot.time)}
-                                                        className={`relative px-3 py-3 rounded-xl border text-sm font-medium transition-all duration-200 group ${slot.booked
-                                                            ? "bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed"
-                                                            : selectedSlot === slot.time
-                                                                ? "bg-primary text-white border-primary shadow-lg shadow-primary/25 scale-[1.03]"
-                                                                : "border-gray-200 hover:border-primary/60 hover:bg-primary/5 text-gray-600 hover:text-primary hover:scale-[1.02]"
-                                                            }`}
-                                                        style={{ animationDelay: `${i * 50}ms` }}
-                                                    >
-                                                        {selectedSlot === slot.time && (
-                                                            <span className="absolute inset-0 rounded-xl animate-ping bg-primary/20" />
-                                                        )}
-                                                        {slot.booked ? <s>{slot.time}</s> : slot.time}
-                                                        {slot.booked && (
-                                                            <span className="block text-[9px] text-gray-300 mt-0.5">Booked</span>
-                                                        )}
-                                                    </button>
-                                                )) : (
+                                                {slots.length > 0 ? slots.map((slot, i) => {
+                                                    const isDisabled = slot.booked || slot.passed;
+                                                    return (
+                                                        <button
+                                                            key={i}
+                                                            disabled={isDisabled}
+                                                            onClick={() => !isDisabled && setSelectedSlot(slot.time)}
+                                                            className={`relative px-3 py-3 rounded-xl border text-sm font-medium transition-all duration-200 group ${isDisabled
+                                                                ? "bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed"
+                                                                : selectedSlot === slot.time
+                                                                    ? "bg-primary text-white border-primary shadow-lg shadow-primary/25 scale-[1.03]"
+                                                                    : "border-gray-200 hover:border-primary/60 hover:bg-primary/5 text-gray-600 hover:text-primary hover:scale-[1.02]"
+                                                                }`}
+                                                            style={{ animationDelay: `${i * 50}ms` }}
+                                                        >
+                                                            {selectedSlot === slot.time && (
+                                                                <span className="absolute inset-0 rounded-xl animate-ping bg-primary/20" />
+                                                            )}
+                                                            {isDisabled ? <s>{slot.time}</s> : slot.time}
+                                                            {isDisabled && (
+                                                                <span className="block text-[9px] text-gray-300 mt-0.5">
+                                                                    {slot.passed ? "Passed" : "Booked"}
+                                                                </span>
+                                                            )}
+                                                        </button>
+                                                    );
+                                                }) : (
                                                     <p className="col-span-3 text-center text-gray-400 text-sm py-6">No slots available for this date</p>
                                                 )}
                                             </div>
