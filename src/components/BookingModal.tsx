@@ -371,7 +371,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                         <input
                                             type="text"
                                             className={fieldCls(errors.name)}
-                                            placeholder="e.g. Priya Sharma"
+                                            placeholder="e.g. Fatima Al Ali"
                                             value={formData.name}
                                             onChange={e => handleChange("name", e.target.value)}
                                             onBlur={() => handleBlur("name")}
