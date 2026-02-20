@@ -51,7 +51,7 @@ const Hero = () => {
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-2 rounded-full border border-primary/20">
                             <Zap className="w-3.5 h-3.5 fill-primary" />
-                            🇦🇪 First Telerehabilitation Platform in the UAE
+                            🇦🇪 &nbsp;First Telerehabilitation Platform in the UAE
                         </div>
 
                         <div className="space-y-2">
