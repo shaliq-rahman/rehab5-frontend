@@ -14,6 +14,7 @@ interface Booking {
     time: string;
     status: string;
     order_id: string;
+    created_at: string;
 }
 
 export default function AdminDashboard() {
@@ -301,6 +302,11 @@ export default function AdminDashboard() {
                                                     <Clock3 className="w-3.5 h-3.5" />
                                                     PENDING
                                                 </span>
+                                            )}
+                                            {booking.created_at && (
+                                                <div className="text-[11px] text-gray-400 mt-2 font-medium">
+                                                    Added: {new Date(booking.created_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
+                                                </div>
                                             )}
                                         </td>
 
