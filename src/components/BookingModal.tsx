@@ -399,15 +399,18 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                             <Phone className="w-3.5 h-3.5 text-primary" />
                                             Phone Number <span className="text-red-400 ml-0.5">*</span>
                                         </label>
-                                        <div className={`rounded-xl overflow-hidden border transition-all duration-200 ${errors.phone ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50 focus-within:border-primary focus-within:bg-white"}`}>
+                                        <div className={`rounded-xl border transition-all duration-200 ${errors.phone ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50 focus-within:border-primary focus-within:bg-white"}`}>
                                             <PhoneInput
                                                 country="in"
                                                 value={formData.phone}
                                                 onChange={p => handleChange("phone", p)}
                                                 onBlur={() => handleBlur("phone")}
-                                                inputStyle={{ width: "100%", border: "none", background: "transparent", height: "44px", paddingLeft: "58px", fontSize: "14px" }}
-                                                buttonStyle={{ border: "none", background: "transparent" }}
+                                                inputStyle={{ width: "100%", border: "none", background: "transparent", height: "44px", paddingLeft: "58px", fontSize: "14px", borderRadius: "0.75rem" }}
+                                                buttonStyle={{ border: "none", background: "transparent", borderRadius: "0.75rem 0 0 0.75rem" }}
                                                 containerStyle={{ width: "100%" }}
+                                                dropdownStyle={{ zIndex: 9999, overflowY: "auto", maxHeight: "220px" }}
+                                                searchStyle={{ width: "100%", boxSizing: "border-box" }}
+                                                enableSearch
                                             />
                                         </div>
                                         <FieldError msg={errors.phone} />
