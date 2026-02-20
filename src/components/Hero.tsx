@@ -36,11 +36,11 @@ const Hero = () => {
         <>
             <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <section className="w-full relative min-h-screen flex items-center overflow-x-hidden">
-                {/* Background Split */}
-                <div className="absolute inset-0 flex flex-col md:flex-row -z-20">
-                    <div className="w-full md:w-[55%] bg-white h-[50%] md:h-full" />
-                    <div className="w-full md:w-[45%] bg-accent h-[50%] md:h-full" />
-                </div>
+                {/* Background Gradient */}
+                <div
+                    className="absolute inset-0 -z-20"
+                    style={{ background: 'linear-gradient(to right, #ffffff 30%, #e8f5e9 60%, #c8e6c9 100%)' }}
+                />
 
                 <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 min-h-screen pt-24 md:pt-0">
                     {/* Text Content */}
@@ -108,7 +108,7 @@ const Hero = () => {
                                 src="/assets/doctor-female.png"
                                 alt="Rehab5 Physiotherapist"
                                 fill
-                                className="object-contain object-bottom mix-blend-multiply"
+                                className="object-contain object-bottom"
                                 priority
                                 unoptimized
                                 sizes="(max-width: 768px) 100vw, 50vw"
