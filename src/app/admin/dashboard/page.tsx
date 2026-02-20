@@ -253,6 +253,7 @@ export default function AdminDashboard() {
                                     <th className="p-5 font-semibold border-b border-gray-100">Patient Details</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Schedule (IST)</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Status</th>
+                                    <th className="p-5 font-semibold border-b border-gray-100">Added On</th>
                                     <th className="p-5 font-semibold border-b border-gray-100 text-right">Order Reference</th>
                                 </tr>
                             </thead>
@@ -303,10 +304,22 @@ export default function AdminDashboard() {
                                                     PENDING
                                                 </span>
                                             )}
-                                            {booking.created_at && (
-                                                <div className="text-[11px] text-gray-400 mt-2 font-medium">
-                                                    Added: {new Date(booking.created_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}
+                                        </td>
+
+                                        {/* Added On */}
+                                        <td className="p-5 align-top pt-6">
+                                            {booking.created_at ? (
+                                                <div className="flex flex-col gap-1.5">
+                                                    <div className="text-[13px] font-semibold text-gray-800">
+                                                        {new Date(booking.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                                                    </div>
+                                                    <div className="text-[12px] text-gray-500 font-medium flex items-center gap-1">
+                                                        <Clock3 className="w-3 h-3 text-gray-400" />
+                                                        {new Date(booking.created_at).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true })}
+                                                    </div>
                                                 </div>
+                                            ) : (
+                                                <span className="text-gray-400 text-xs">—</span>
                                             )}
                                         </td>
 
@@ -335,7 +348,7 @@ export default function AdminDashboard() {
 
                                 {bookings.length === 0 && (
                                     <tr>
-                                        <td colSpan={4} className="p-16 text-center">
+                                        <td colSpan={5} className="p-16 text-center">
                                             <div className="flex flex-col items-center justify-center space-y-4">
                                                 <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center text-gray-400">
                                                     <Users className="w-8 h-8" />
