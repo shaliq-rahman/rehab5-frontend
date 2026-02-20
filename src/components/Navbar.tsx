@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Stethoscope } from "lucide-react";
 import { useState, useEffect } from "react";
 import BookingModal from "./BookingModal";
 
@@ -30,8 +30,8 @@ const Navbar = () => {
             <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${scrolled
-                        ? "bg-white/95 backdrop-blur-md shadow-md py-3"
-                        : "bg-transparent py-5"
+                    ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+                    : "bg-transparent py-5"
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
@@ -60,15 +60,7 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Desktop CTA */}
-                    <div className="hidden md:block">
-                        <button
-                            onClick={() => setIsModalOpen(true)}
-                            className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/20"
-                        >
-                            Book Appointment
-                        </button>
-                    </div>
+                    {/* Desktop CTA removed */}
 
                     {/* Mobile Menu Button */}
                     <button
@@ -92,12 +84,6 @@ const Navbar = () => {
                                 {link.label}
                             </Link>
                         ))}
-                        <button
-                            onClick={() => { setIsMenuOpen(false); setIsModalOpen(true); }}
-                            className="w-full bg-primary text-white py-3 rounded-lg text-sm font-medium mt-2"
-                        >
-                            Book Appointment
-                        </button>
                     </div>
                 )}
             </nav>
