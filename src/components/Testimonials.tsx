@@ -6,7 +6,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
     {
         name: "Fatima Al Mansoori",
-        location: "Dubai Marina, UAE",
+        location: "UAE",
         rating: 5,
         text: "I never imagined I could do physiotherapy from my living room. After my knee surgery, Rehab5's telerehab sessions were a game-changer — my specialist guided me through every exercise via video and I recovered in record time. This is the future!",
         role: "Post-Surgery Telerehab Patient",
@@ -20,7 +20,7 @@ const testimonials = [
     },
     {
         name: "Aisha Khalid",
-        location: "Downtown Dubai, UAE",
+        location: "UAE",
         rating: 5,
         text: "My son has developmental challenges and traveling to clinics was exhausting for him. Rehab5's pediatric telerehab sessions are engaging, child-friendly, and incredibly effective. Dr. Priya has been incredible — all via video call.",
         role: "Parent of Pediatric Telerehab Patient",
