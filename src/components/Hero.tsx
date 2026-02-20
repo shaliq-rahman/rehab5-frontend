@@ -42,7 +42,7 @@ const Hero = () => {
                     style={{ background: 'linear-gradient(to right, #ffffff 30%, #e8f5e9 60%, #c8e6c9 100%)' }}
                 />
 
-                <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 min-h-screen pt-24 md:pt-0">
+                <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 min-h-screen pt-32 md:pt-16">
                     {/* Text Content */}
                     <div
                         ref={textRef}
