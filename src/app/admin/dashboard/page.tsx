@@ -329,7 +329,7 @@ export default function AdminDashboard() {
                                         <td className="p-5 align-top pt-6">
                                             <div className="flex items-center gap-1 font-bold text-gray-800 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100 inline-flex shadow-sm">
                                                 <span className="text-gray-400 font-medium text-sm">₹</span>
-                                                {(booking.amount / 100).toFixed(2)}
+                                                {Number(booking.amount).toFixed(2)}
                                             </div>
                                         </td>
 
