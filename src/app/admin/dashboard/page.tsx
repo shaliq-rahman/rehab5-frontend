@@ -15,6 +15,7 @@ interface Booking {
     status: string;
     order_id: string;
     created_at: string;
+    amount: number;
 }
 
 export default function AdminDashboard() {
@@ -254,6 +255,7 @@ export default function AdminDashboard() {
                                     <th className="p-5 font-semibold border-b border-gray-100">Schedule (IST)</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Status</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Added On</th>
+                                    <th className="p-5 font-semibold border-b border-gray-100">Amount</th>
                                     <th className="p-5 font-semibold border-b border-gray-100 text-right">Order Reference</th>
                                 </tr>
                             </thead>
@@ -323,6 +325,14 @@ export default function AdminDashboard() {
                                             )}
                                         </td>
 
+                                        {/* Amount */}
+                                        <td className="p-5 align-top pt-6">
+                                            <div className="flex items-center gap-1 font-bold text-gray-800 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100 inline-flex shadow-sm">
+                                                <span className="text-gray-400 font-medium text-sm">₹</span>
+                                                {(booking.amount / 100).toFixed(2)}
+                                            </div>
+                                        </td>
+
                                         {/* Order ID */}
                                         <td className="p-5 align-top pt-6 text-right">
                                             <div className="flex flex-col items-end gap-2.5">
@@ -348,7 +358,7 @@ export default function AdminDashboard() {
 
                                 {bookings.length === 0 && (
                                     <tr>
-                                        <td colSpan={5} className="p-16 text-center">
+                                        <td colSpan={6} className="p-16 text-center">
                                             <div className="flex flex-col items-center justify-center space-y-4">
                                                 <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center text-gray-400">
                                                     <Users className="w-8 h-8" />
