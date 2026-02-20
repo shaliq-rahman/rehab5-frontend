@@ -36,9 +36,10 @@ export default function AdminDashboard() {
             }
 
             try {
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
                 const url = selectedDate
-                    ? `http://127.0.0.1:8000/admin/bookings?date=${selectedDate}`
-                    : "http://127.0.0.1:8000/admin/bookings";
+                    ? `${apiUrl}/admin/bookings?date=${selectedDate}`
+                    : `${apiUrl}/admin/bookings`;
 
                 const response = await fetch(url, {
                     headers: {
@@ -78,7 +79,8 @@ export default function AdminDashboard() {
         }
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/admin/resend-email/${id}`, {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+            const response = await fetch(`${apiUrl}/admin/resend-email/${id}`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`

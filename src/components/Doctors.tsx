@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import BookingModal from "./BookingModal";
 
 const doctors = [
     {
@@ -45,6 +46,7 @@ const doctors = [
 
 const Doctors = () => {
     const sectionRef = useRef<HTMLElement>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -64,6 +66,7 @@ const Doctors = () => {
 
     return (
         <section id="doctors" ref={sectionRef} className="w-full py-20 md:py-28 bg-slate-50/60">
+            <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <div className="max-w-7xl mx-auto px-6 md:px-8">
                 <div className="text-center space-y-3 mb-14 reveal">
                     <span className="text-primary text-xs font-semibold uppercase tracking-widest">Our Team</span>
@@ -79,7 +82,8 @@ const Doctors = () => {
                     {doctors.map((doc, i) => (
                         <div
                             key={doc.name}
-                            className="reveal-scale card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden group"
+                            onClick={() => setIsModalOpen(true)}
+                            className="reveal-scale card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer"
                             style={{ transitionDelay: `${i * 100}ms` }}
                         >
                             {/* Photo */}

@@ -18,7 +18,8 @@ export default function AdminLogin() {
         setError("");
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/login", {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+            const response = await fetch(`${apiUrl}/admin/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
