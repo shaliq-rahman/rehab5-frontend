@@ -7,20 +7,20 @@ const steps = [
     {
         icon: Calendar,
         step: "01",
-        title: "Book Online",
-        description: "Choose your preferred date, time, and therapist. Book instantly from our easy-to-use portal — no waiting, no hassle.",
+        title: "Book Online in Seconds",
+        description: "Choose your preferred date, time, and telerehab specialist. Instant confirmation — no waiting rooms, no travel, no hassle.",
     },
     {
         icon: Video,
         step: "02",
-        title: "Consultation",
-        description: "Meet your therapist via a secure video consultation or in-person. Discuss your condition and goals in detail.",
+        title: "Join Your Live Session",
+        description: "Connect with your specialist via secure HD video from your home, office, or anywhere in the UAE. Just click and start recovering.",
     },
     {
         icon: ClipboardList,
         step: "03",
-        title: "Your Recovery Plan",
-        description: "Receive a personalised, evidence-based rehabilitation program. Track your progress and achieve lasting recovery.",
+        title: "Your Digital Recovery Plan",
+        description: "Receive a personalised telerehab program with guided exercises and progress tracking — all managed online for maximum outcomes.",
     },
 ];
 
@@ -47,12 +47,12 @@ const HowItWorks = () => {
         <section id="how-it-works" ref={sectionRef} className="w-full py-20 md:py-28 bg-white">
             <div className="max-w-7xl mx-auto px-6 md:px-8">
                 <div className="text-center space-y-3 mb-16 reveal">
-                    <span className="text-primary text-xs font-semibold uppercase tracking-widest">Simple Process</span>
+                    <span className="text-primary text-xs font-semibold uppercase tracking-widest">Simple &amp; 100% Remote</span>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        How It <span className="text-primary">Works</span>
+                        How Telerehab <span className="text-primary">Works</span>
                     </h2>
                     <p className="text-gray-500 text-sm max-w-md mx-auto">
-                        Getting started with Rehab5 is easy. Three simple steps to begin your recovery journey.
+                        Getting started with Rehab5 takes minutes. Three steps to begin your recovery — entirely online.
                     </p>
                 </div>
 
@@ -91,7 +91,7 @@ const HowItWorks = () => {
                         href="#doctors"
                         className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-xl font-medium text-sm hover:bg-primary-dark transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/25"
                     >
-                        Meet Our Therapists
+                        Meet Our Telerehab Specialists
                     </a>
                 </div>
             </div>

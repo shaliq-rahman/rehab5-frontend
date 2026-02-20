@@ -38,6 +38,8 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
 
+    const AED_FEE = 250;
+
     const contentRef = useRef<HTMLDivElement>(null);
 
     // ── Fetch slots ──
@@ -51,6 +53,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             .then(d => { setSlots(d[0]?.slots ?? []); setLoadingSlots(false); })
             .catch(() => setLoadingSlots(false));
     }, [isOpen, selectedDate]);
+
 
     // ── Animated step transition ──
     const goTo = (next: number, dir: "forward" | "back" = "forward") => {
@@ -100,7 +103,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    amount: 50000, currency: "INR",
+                    amount_aed: AED_FEE,
                     receipt: `rcpt_${Date.now()}`,
                     date: selectedDate.toISOString().split("T")[0],
                     slot: selectedSlot,
@@ -401,7 +404,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                         </label>
                                         <div className={`rounded-xl border transition-all duration-200 ${errors.phone ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50 focus-within:border-primary focus-within:bg-white"}`}>
                                             <PhoneInput
-                                                country="in"
+                                                country="ae"
                                                 value={formData.phone}
                                                 onChange={p => handleChange("phone", p)}
                                                 onBlur={() => handleBlur("phone")}
@@ -420,7 +423,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                     <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-100">
                                         <div>
                                             <p className="text-xs text-gray-400">Consultation Fee</p>
-                                            <p className="text-lg font-bold text-gray-800">₹500</p>
+                                            <p className="text-lg font-bold text-gray-800">AED {AED_FEE}</p>
                                         </div>
                                         <div className="text-right">
                                             <p className="text-xs text-gray-400">Secure payment via</p>
@@ -433,7 +436,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                         className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-semibold hover:bg-primary-dark active:scale-[0.98] transition-all duration-200 shadow-lg shadow-primary/20"
                                     >
                                         <CreditCard className="w-4 h-4" />
-                                        Pay &amp; Book — ₹500
+                                        Pay &amp; Book — AED {AED_FEE}
                                     </button>
                                     <p className="text-center text-[11px] text-gray-400">🔒 Safe, encrypted &amp; secure checkout</p>
                                 </div>

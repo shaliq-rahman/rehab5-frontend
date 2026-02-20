@@ -8,7 +8,7 @@ import BookingModal from "./BookingModal";
 const doctors = [
     {
         name: "Dr. Sarah Mitchell",
-        role: "Senior Physiotherapist",
+        role: "Senior Telerehab Specialist",
         specialty: "Sports & Orthopaedic",
         experience: "8 Years",
         rating: 4.9,
@@ -17,8 +17,8 @@ const doctors = [
     },
     {
         name: "Dr. Arjun Patel",
-        role: "Rehabilitation Specialist",
-        specialty: "Neurological Rehab",
+        role: "Remote Rehab Consultant",
+        specialty: "Neurological Telerehab",
         experience: "6 Years",
         rating: 4.8,
         reviews: 98,
@@ -26,8 +26,8 @@ const doctors = [
     },
     {
         name: "Dr. Priya Nair",
-        role: "Pediatric Physiotherapist",
-        specialty: "Pediatric Rehab",
+        role: "Pediatric Telerehab Expert",
+        specialty: "Pediatric Remote Rehab",
         experience: "5 Years",
         rating: 4.9,
         reviews: 76,
@@ -35,8 +35,8 @@ const doctors = [
     },
     {
         name: "Dr. James Okafor",
-        role: "Pain Management Expert",
-        specialty: "Chronic Pain & TENS",
+        role: "Lead Telerehab Consultant",
+        specialty: "Chronic Pain & Recovery",
         experience: "10 Years",
         rating: 5.0,
         reviews: 201,
@@ -71,10 +71,10 @@ const Doctors = () => {
                 <div className="text-center space-y-3 mb-14 reveal">
                     <span className="text-primary text-xs font-semibold uppercase tracking-widest">Our Team</span>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        Meet Our Expert <span className="text-primary">Therapists</span>
+                        Meet Our Telerehab <span className="text-primary">Specialists</span>
                     </h2>
                     <p className="text-gray-500 text-sm max-w-md mx-auto">
-                        Certified professionals passionate about helping you recover and thrive.
+                        Certified remote rehabilitation experts — passionate about delivering life-changing results through your screen.
                     </p>
                 </div>
 
@@ -96,7 +96,7 @@ const Doctors = () => {
                                 />
                                 {/* Hover overlay */}
                                 <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span className="text-white text-sm font-semibold tracking-wide">Book Session</span>
+                                    <span className="text-white text-sm font-semibold tracking-wide">Book Online Session</span>
                                 </div>
                             </div>
 

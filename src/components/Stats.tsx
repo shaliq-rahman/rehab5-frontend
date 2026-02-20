@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const statsData = [
-    { value: 500, suffix: "+", label: "Patients Served" },
-    { value: 98, suffix: "%", label: "Success Rate" },
-    { value: 5, suffix: "+", label: "Specialities" },
-    { value: 3, suffix: "+", label: "Years Experience" },
+    { value: 500, suffix: "+", label: "Remote Sessions Delivered" },
+    { value: 98, suffix: "%", label: "Recovery Success Rate" },
+    { value: 1, suffix: "st", label: "Telerehab Platform in the UAE" },
+    { value: 100, suffix: "%", label: "Online — No Clinic Visits" },
 ];
 
 function useCountUp(target: number, duration: number, active: boolean) {
@@ -49,7 +49,6 @@ const Stats = () => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setActive(true);
-                    // Also trigger reveal on children
                     sectionRef.current?.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
                     observer.disconnect();
                 }
@@ -67,12 +66,12 @@ const Stats = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
                         Numbers That{" "}
                         <span className="text-primary relative">
-                            Speak For Us
+                            Prove The Future
                             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary/30 rounded" />
                         </span>
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed">
-                        At Rehab5, every number represents a real person whose life we&apos;ve helped improve through expert rehabilitation care.
+                        Rehab5 is rewriting what rehabilitation looks like in the UAE — every number reflects a patient who recovered smarter, faster, and from the comfort of their home.
                     </p>
                 </div>
 

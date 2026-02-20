@@ -1,43 +1,43 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Activity, Zap, Heart, Brain, Baby, Bone } from "lucide-react";
+import { Video, Activity, Zap, Brain, Baby, Bone } from "lucide-react";
 
 const services = [
     {
-        icon: Activity,
-        title: "Physiotherapy",
-        description: "Targeted exercises and manual therapy to restore movement, reduce pain, and improve physical function.",
+        icon: Video,
+        title: "Live Video Rehab Sessions",
+        description: "One-on-one real-time sessions with certified specialists via secure HD video — as effective as in-person, from anywhere in the UAE.",
         color: "bg-blue-50 text-blue-600",
     },
     {
+        icon: Activity,
+        title: "Remote Physiotherapy",
+        description: "Guided therapeutic exercises and movement correction delivered digitally — personalised, monitored, and progress-tracked online.",
+        color: "bg-green-50 text-green-600",
+    },
+    {
         icon: Zap,
-        title: "Sports Rehabilitation",
-        description: "Specialised recovery programs for athletes — from acute injury management to performance optimisation.",
+        title: "Sports Telerehabilitation",
+        description: "Remote recovery programs for athletes — from acute injury management to return-to-sport planning, all without stepping into a clinic.",
         color: "bg-orange-50 text-orange-500",
     },
     {
         icon: Bone,
-        title: "Post-Surgery Recovery",
-        description: "Structured rehabilitation following orthopaedic or joint replacement surgeries to regain full function.",
+        title: "Post-Surgery Remote Recovery",
+        description: "Structured post-operative rehabilitation delivered virtually — continuity of care from your home, without repeated hospital visits.",
         color: "bg-purple-50 text-purple-600",
     },
     {
-        icon: Heart,
-        title: "Pain Management",
-        description: "Evidence-based techniques to manage chronic and acute pain including dry needling, TENS, and ultrasound therapy.",
+        icon: Brain,
+        title: "Neurological Telerehab",
+        description: "Remote therapy for stroke, Parkinson's, and MS patients — consistent sessions and digital exercise programs that drive real outcomes.",
         color: "bg-red-50 text-red-500",
     },
     {
-        icon: Brain,
-        title: "Neurological Rehab",
-        description: "Comprehensive rehabilitation for neurological conditions such as stroke, Parkinson's, and multiple sclerosis.",
-        color: "bg-green-50 text-green-600",
-    },
-    {
         icon: Baby,
-        title: "Pediatric Rehab",
-        description: "Child-friendly rehabilitation programs addressing developmental delays, cerebral palsy, and musculoskeletal issues.",
+        title: "Pediatric Telerehab",
+        description: "Child-friendly remote rehabilitation for developmental delays and musculoskeletal conditions — accessible, engaging, and parent-guided.",
         color: "bg-yellow-50 text-yellow-600",
     },
 ];
@@ -68,11 +68,11 @@ const Services = () => {
                 <div className="text-center space-y-3 mb-14 reveal">
                     <span className="text-primary text-xs font-semibold uppercase tracking-widest">What We Offer</span>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        Our Rehabilitation{" "}
+                        Our Telerehabilitation{" "}
                         <span className="text-primary">Services</span>
                     </h2>
                     <p className="text-gray-500 text-sm max-w-lg mx-auto leading-relaxed">
-                        Comprehensive rehabilitation solutions delivered by certified professionals, tailored to your individual needs.
+                        Comprehensive rehabilitation delivered entirely online — no clinic visits needed. Same expertise, greater convenience, measurable results.
                     </p>
                 </div>
 

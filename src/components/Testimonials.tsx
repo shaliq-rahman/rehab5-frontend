@@ -5,32 +5,32 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
     {
-        name: "Riya Sharma",
-        location: "Mumbai",
+        name: "Fatima Al Mansoori",
+        location: "Dubai Marina, UAE",
         rating: 5,
-        text: "After my knee surgery, I was worried I'd never run again. Rehab5's team built a personalised recovery plan and within 3 months I was back on the track. Absolutely life-changing!",
-        role: "Post-Surgery Patient",
+        text: "I never imagined I could do physiotherapy from my living room. After my knee surgery, Rehab5's telerehab sessions were a game-changer — my specialist guided me through every exercise via video and I recovered in record time. This is the future!",
+        role: "Post-Surgery Telerehab Patient",
     },
     {
-        name: "Kiran Mehta",
-        location: "Pune",
+        name: "Omar Hassan",
+        location: "Jumeirah, UAE",
         rating: 5,
-        text: "I've been dealing with chronic back pain for years. Dr. Okafor at Rehab5 identified the root cause and in just 6 weeks my pain reduced by 80%. The online booking made it so convenient.",
-        role: "Chronic Pain Patient",
+        text: "As a busy professional in the UAE, I had no time to visit a physio clinic. Rehab5 let me book a session during my lunch break from my home office. My back pain went from chronic to manageable in 5 weeks — all online.",
+        role: "Remote Rehab Patient",
     },
     {
-        name: "Suresh Nambiar",
-        location: "Bangalore",
+        name: "Aisha Khalid",
+        location: "Downtown Dubai, UAE",
         rating: 5,
-        text: "My son had developmental delays and we were referred to Rehab5's pediatric team. Dr. Priya is exceptional — patient, caring, and highly skilled. We've seen incredible progress.",
-        role: "Parent of Pediatric Patient",
+        text: "My son has developmental challenges and traveling to clinics was exhausting for him. Rehab5's pediatric telerehab sessions are engaging, child-friendly, and incredibly effective. Dr. Priya has been incredible — all via video call.",
+        role: "Parent of Pediatric Telerehab Patient",
     },
     {
-        name: "Anita D'Souza",
-        location: "Goa",
+        name: "Mohammed Al Rashidi",
+        location: "Business Bay, UAE",
         rating: 5,
-        text: "As a weekend football player I tore my hamstring. The sports rehab program at Rehab5 was exactly what I needed — structured, progressive, and effective. Back playing in 8 weeks!",
-        role: "Sports Rehab Patient",
+        text: "I tore my hamstring during a football match and was flying back to the UAE the next day. Rehab5 had me in a remote session within 24 hours. Structured, progressive, and completely online — I was back playing in 7 weeks.",
+        role: "Sports Telerehab Patient",
     },
 ];
 
@@ -65,12 +65,12 @@ const Testimonials = () => {
         <section id="testimonials" ref={sectionRef} className="w-full py-20 md:py-28 bg-gradient-to-br from-primary/5 to-white">
             <div className="max-w-4xl mx-auto px-6 md:px-8">
                 <div className="text-center space-y-3 mb-14 reveal">
-                    <span className="text-primary text-xs font-semibold uppercase tracking-widest">Patient Stories</span>
+                    <span className="text-primary text-xs font-semibold uppercase tracking-widest">UAE Patient Stories</span>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        Real Results, <span className="text-primary">Real People</span>
+                        Real Recovery, <span className="text-primary">Fully Online</span>
                     </h2>
                     <p className="text-gray-500 text-sm max-w-md mx-auto">
-                        Hear from the patients whose lives Rehab5 has helped transform.
+                        Hear from patients across the UAE who transformed their recovery through Rehab5&apos;s telerehabitation platform.
                     </p>
                 </div>
 

@@ -16,6 +16,8 @@ interface Booking {
     order_id: string;
     created_at: string;
     amount: number;
+    amount_aed: number;
+    amount_inr: number;
 }
 
 export default function AdminDashboard() {
@@ -252,7 +254,7 @@ export default function AdminDashboard() {
                             <thead className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm shadow-sm">
                                 <tr className="text-gray-500 text-xs uppercase tracking-wider">
                                     <th className="p-5 font-semibold border-b border-gray-100">Patient Details</th>
-                                    <th className="p-5 font-semibold border-b border-gray-100">Schedule (IST)</th>
+                                    <th className="p-5 font-semibold border-b border-gray-100">Schedule (UAE Time / GST)</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Status</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Added On</th>
                                     <th className="p-5 font-semibold border-b border-gray-100">Amount</th>
@@ -308,16 +310,17 @@ export default function AdminDashboard() {
                                             )}
                                         </td>
 
-                                        {/* Added On */}
+                                        {/* Added On — UTC */}
                                         <td className="p-5 align-top pt-6">
                                             {booking.created_at ? (
                                                 <div className="flex flex-col gap-1.5">
                                                     <div className="text-[13px] font-semibold text-gray-800">
-                                                        {new Date(booking.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                                                        {new Date(booking.created_at + "Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })}
                                                     </div>
                                                     <div className="text-[12px] text-gray-500 font-medium flex items-center gap-1">
                                                         <Clock3 className="w-3 h-3 text-gray-400" />
-                                                        {new Date(booking.created_at).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true })}
+                                                        {new Date(booking.created_at + "Z").toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true, timeZone: "UTC" })}
+                                                        <span className="ml-1 text-[10px] text-gray-400 font-bold bg-gray-100 px-1.5 py-0.5 rounded">UTC</span>
                                                     </div>
                                                 </div>
                                             ) : (
@@ -325,11 +328,18 @@ export default function AdminDashboard() {
                                             )}
                                         </td>
 
-                                        {/* Amount */}
+                                        {/* Amount — AED primary, INR secondary */}
                                         <td className="p-5 align-top pt-6">
-                                            <div className="flex items-center gap-1 font-bold text-gray-800 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100 inline-flex shadow-sm">
-                                                <span className="text-gray-400 font-medium text-sm">₹</span>
-                                                {Number(booking.amount).toFixed(2)}
+                                            <div className="flex flex-col gap-1">
+                                                <div className="flex items-center gap-1 font-bold text-gray-800 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100 inline-flex shadow-sm">
+                                                    <span className="text-gray-400 font-medium text-sm">AED</span>
+                                                    {booking.amount_aed ? Number(booking.amount_aed).toFixed(0) : "—"}
+                                                </div>
+                                                {booking.amount_inr ? (
+                                                    <div className="text-[11px] text-gray-400 pl-1">
+                                                        ≈ ₹{Number(booking.amount_inr).toLocaleString("en-IN")}
+                                                    </div>
+                                                ) : null}
                                             </div>
                                         </td>
 

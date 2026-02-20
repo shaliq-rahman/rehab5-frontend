@@ -12,7 +12,7 @@ const Footer = () => {
                             <Image src="/assets/logo.png" alt="Rehab5 Logo" fill className="object-contain object-left brightness-0 invert" />
                         </div>
                         <p className="text-sm leading-relaxed">
-                            Expert physiotherapy and rehabilitation services helping you recover, move better, and live pain-free.
+                            The UAE&apos;s first telerehabitation platform — delivering certified, results-driven remote rehabilitation to patients across the UAE.
                         </p>
                         <div className="flex gap-3">
                             {[Instagram, Facebook, Twitter].map((Icon, i) => (
@@ -25,9 +25,9 @@ const Footer = () => {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-white font-semibold text-sm mb-4">Services</h4>
+                        <h4 className="text-white font-semibold text-sm mb-4">Telerehab Services</h4>
                         <ul className="space-y-3 text-sm">
-                            {["Physiotherapy", "Sports Rehabilitation", "Post-Surgery Recovery", "Pain Management", "Neurological Rehab", "Pediatric Rehab"].map((s) => (
+                            {["Live Video Rehab Sessions", "Remote Physiotherapy", "Sports Telerehabilitation", "Post-Surgery Remote Recovery", "Neurological Telerehab", "Pediatric Telerehab"].map((s) => (
                                 <li key={s}><a href="#services" className="hover:text-primary transition-colors">{s}</a></li>
                             ))}
                         </ul>
@@ -40,9 +40,9 @@ const Footer = () => {
                             {[
                                 { label: "About Us", href: "#about" },
                                 { label: "How It Works", href: "#how-it-works" },
-                                { label: "Our Doctors", href: "#doctors" },
-                                { label: "Testimonials", href: "#testimonials" },
-                                { label: "Book Appointment", href: "#" },
+                                { label: "Our Specialists", href: "#doctors" },
+                                { label: "Patient Stories", href: "#testimonials" },
+                                { label: "Book Online Session", href: "#" },
                             ].map((link) => (
                                 <li key={link.label}><a href={link.href} className="hover:text-primary transition-colors">{link.label}</a></li>
                             ))}
@@ -55,22 +55,22 @@ const Footer = () => {
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                <span>Rehab5 Clinic, 5th Floor, Health Tower, MG Road, Bangalore — 560001</span>
+                                <span>Rehab5, Dubai Internet City, Dubai — UAE</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                                <a href="tel:+919876543210" className="hover:text-primary transition-colors">+91 98765 43210</a>
+                                <a href="tel:+97145551234" className="hover:text-primary transition-colors">+971 4 555 1234</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                                <a href="mailto:care@rehab5.in" className="hover:text-primary transition-colors">care@rehab5.in</a>
+                                <a href="mailto:care@rehab5.ae" className="hover:text-primary transition-colors">care@rehab5.ae</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-                    <p>© {new Date().getFullYear()} Rehab5. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Rehab5. All rights reserved. — The UAE&apos;s First Telerehabitation Platform.</p>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
