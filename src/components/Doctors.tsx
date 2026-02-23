@@ -7,7 +7,7 @@ import BookingModal from "./BookingModal";
 
 const doctors = [
     {
-        name: "Dr. Sarah Mitchell",
+        name: "Dr. Fatima Al Nuaimi",
         role: "Senior Telerehab Specialist",
         specialty: "Sports & Orthopaedic",
         experience: "8 Years",
@@ -16,7 +16,7 @@ const doctors = [
         image: "/assets/doctor-sarah.png",
     },
     {
-        name: "Dr. Arjun Patel",
+        name: "Dr. Tariq Al Hashimi",
         role: "Remote Rehab Consultant",
         specialty: "Neurological Telerehab",
         experience: "6 Years",
@@ -25,7 +25,7 @@ const doctors = [
         image: "/assets/doctor-arjun.png",
     },
     {
-        name: "Dr. Priya Nair",
+        name: "Dr. Ranya Mansour",
         role: "Pediatric Telerehab Expert",
         specialty: "Pediatric Remote Rehab",
         experience: "5 Years",
@@ -34,7 +34,7 @@ const doctors = [
         image: "/assets/doctor-priya.png",
     },
     {
-        name: "Dr. James Okafor",
+        name: "Dr. Khalid Al Suwaidi",
         role: "Lead Telerehab Consultant",
         specialty: "Chronic Pain & Recovery",
         experience: "10 Years",

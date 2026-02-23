@@ -22,7 +22,7 @@ const testimonials = [
         name: "Aisha Khalid",
         location: "UAE",
         rating: 5,
-        text: "My son has developmental challenges and traveling to clinics was exhausting for him. Rehab5's pediatric telerehab sessions are engaging, child-friendly, and incredibly effective. Dr. Priya has been incredible — all via video call.",
+        text: "My son has developmental challenges and traveling to clinics was exhausting for him. Rehab5's pediatric telerehab sessions are engaging, child-friendly, and incredibly effective. Dr. Ranya has been incredible — all via video call.",
         role: "Parent of Pediatric Telerehab Patient",
     },
     {
