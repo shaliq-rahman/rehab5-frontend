@@ -7,41 +7,14 @@ import BookingModal from "./BookingModal";
 
 const doctors = [
     {
-        name: "Dr. Fatima Al Nuaimi",
+        name: "Dr. Shemjaz Arakkal",
         role: "Senior Telerehab Specialist",
-        specialty: "Sports & Orthopaedic",
-        experience: "8 Years",
-        rating: 4.9,
-        reviews: 142,
-        image: "/assets/doctor-sarah.png",
-    },
-    {
-        name: "Dr. Tariq Al Hashimi",
-        role: "Remote Rehab Consultant",
-        specialty: "Neurological Telerehab",
-        experience: "6 Years",
-        rating: 4.8,
-        reviews: 98,
-        image: "/assets/doctor-arjun.png",
-    },
-    {
-        name: "Dr. Ranya Mansour",
-        role: "Pediatric Telerehab Expert",
-        specialty: "Pediatric Remote Rehab",
-        experience: "5 Years",
-        rating: 4.9,
-        reviews: 76,
-        image: "/assets/doctor-priya.png",
-    },
-    {
-        name: "Dr. Khalid Al Suwaidi",
-        role: "Lead Telerehab Consultant",
-        specialty: "Chronic Pain & Recovery",
-        experience: "10 Years",
+        specialty: "Comprehensive Remote Rehab",
+        experience: "12 Years",
         rating: 5.0,
-        reviews: 201,
-        image: "/assets/doctor-james.png",
-    },
+        reviews: 245,
+        image: "/assets/doctor-shemjaz.png",
+    }
 ];
 
 const Doctors = () => {
@@ -78,12 +51,12 @@ const Doctors = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="flex justify-center flex-wrap gap-6">
                     {doctors.map((doc, i) => (
                         <div
                             key={doc.name}
                             onClick={() => setIsModalOpen(true)}
-                            className="reveal-scale card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer"
+                            className="reveal-scale w-full sm:w-[320px] card-hover bg-white rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer"
                             style={{ transitionDelay: `${i * 100}ms` }}
                         >
                             {/* Photo */}

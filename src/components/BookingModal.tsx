@@ -12,6 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Script from "next/script";
+import Image from "next/image";
 
 interface SlotItem { time: string; booked: boolean; passed?: boolean; }
 
@@ -107,6 +108,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     receipt: `rcpt_${Date.now()}`,
                     date: selectedDate.toISOString().split("T")[0],
                     slot: selectedSlot,
+                    doctor: "Dr. Shemjaz Arakkal",
                     ...formData
                 }),
             });
@@ -130,7 +132,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                 razorpay_payment_id: resp.razorpay_payment_id,
                                 razorpay_signature: resp.razorpay_signature,
                                 date: selectedDate.toISOString().split("T")[0],
-                                slot: selectedSlot, ...formData
+                                slot: selectedSlot,
+                                doctor: "Dr. Shemjaz Arakkal",
+                                ...formData
                             }),
                         });
                         if (!v.ok) throw new Error();
@@ -264,6 +268,24 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                             className={`p-5 transition-all duration-200 ease-out ${slideClass}`}
                             style={{ willChange: "transform, opacity" }}
                         >
+                            {/* ── Selected Doctor Profile (Steps 1 & 2) ── */}
+                            {(step === 1 || step === 2) && (
+                                <div className="flex items-center gap-4 p-3 mb-5 bg-gray-50 border border-gray-100 rounded-xl">
+                                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary/20 bg-white">
+                                        <Image
+                                            src="/assets/doctor-shemjaz.png"
+                                            alt="Dr. Shemjaz Arakkal"
+                                            fill
+                                            className="object-cover object-top"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-gray-400 font-medium">Selected Specialist</p>
+                                        <p className="text-sm font-bold text-gray-800">Dr. Shemjaz Arakkal</p>
+                                    </div>
+                                </div>
+                            )}
+
                             {/* ══ STEP 1: Slot Picker ══ */}
                             {step === 1 && (
                                 <div className="space-y-5">
