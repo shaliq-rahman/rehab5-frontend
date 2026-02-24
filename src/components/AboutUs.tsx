@@ -30,7 +30,7 @@ const AboutUs = () => {
     }, []);
 
     return (
-        <section id="about" ref={sectionRef} className="w-full max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 flex flex-col md:flex-row items-center gap-14">
+        <section id="about" ref={sectionRef} className="w-full max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-28 flex flex-col md:flex-row items-center gap-14">
             {/* Image */}
             <div className="flex-1 relative h-[400px] md:h-[520px] w-full rounded-2xl overflow-hidden shadow-2xl reveal-left">
                 <Image

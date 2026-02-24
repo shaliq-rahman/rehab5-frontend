@@ -35,14 +35,14 @@ const Hero = () => {
     return (
         <>
             <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-            <section className="w-full relative min-h-screen flex items-center overflow-x-hidden">
+            <section className="w-full relative md:min-h-screen flex items-center overflow-x-hidden pb-12 md:pb-0">
                 {/* Background Gradient */}
                 <div
                     className="absolute inset-0 -z-20"
                     style={{ background: 'linear-gradient(to right, #ffffff 30%, #e8f5e9 60%, #c8e6c9 100%)' }}
                 />
 
-                <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 min-h-screen pt-32 md:pt-2">
+                <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 md:min-h-screen pt-24 md:pt-2">
                     {/* Text Content */}
                     <div
                         ref={textRef}
@@ -58,7 +58,7 @@ const Hero = () => {
                             <span className="text-gray-400 text-xs tracking-widest uppercase block">
                                 The Future of Rehabilitation — Here, Now
                             </span>
-                            <h1 className="text-5xl md:text-7xl text-gray-900 leading-[1.05]">
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl text-gray-900 leading-[1.05]">
                                 <span className="font-light block">Recover Smarter,</span>
                                 <span className="font-bold text-primary block">Anywhere with</span>
                                 <span className="font-light block">Telerehab</span>
@@ -102,7 +102,7 @@ const Hero = () => {
                     {/* Image */}
                     <div
                         ref={imageRef}
-                        className="flex-1 relative w-full h-[50vh] md:h-screen flex items-end justify-center reveal-right"
+                        className="flex-1 relative w-full h-[40vh] sm:h-[50vh] md:h-screen flex items-end justify-center reveal-right mt-8 md:mt-0"
                     >
                         <div className="relative w-full h-full md:w-[130%] md:h-[95%] md:right-[10%]">
                             <Image
@@ -117,7 +117,7 @@ const Hero = () => {
                         </div>
 
                         {/* Floating card */}
-                        <div className="absolute bottom-16 md:bottom-24 left-0 md:left-2 bg-white rounded-2xl shadow-2xl p-4 z-10 animate-float">
+                        <div className="hidden md:block absolute bottom-16 md:bottom-24 left-1/2 -translate-x-1/2 md:left-2 md:translate-x-0 w-max bg-white rounded-2xl shadow-2xl p-4 z-10 animate-float">
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                                     <Calendar className="w-5 h-5 text-primary" />

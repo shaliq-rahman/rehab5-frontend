@@ -62,7 +62,7 @@ const Services = () => {
     }, []);
 
     return (
-        <section id="services" ref={sectionRef} className="w-full bg-slate-50/60 py-20 md:py-28">
+        <section id="services" ref={sectionRef} className="w-full bg-slate-50/60 py-16 md:py-28">
             <div className="max-w-7xl mx-auto px-6 md:px-8">
                 {/* Header */}
                 <div className="text-center space-y-3 mb-14 reveal">

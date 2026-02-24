@@ -60,7 +60,7 @@ const Stats = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full bg-gradient-to-br from-slate-50 to-white py-20 md:py-28">
+        <section ref={sectionRef} className="w-full bg-gradient-to-br from-slate-50 to-white py-16 md:py-28">
             <div className="max-w-7xl mx-auto px-8 flex flex-col items-center text-center space-y-14">
                 <div className="space-y-4 max-w-2xl reveal" style={{ transitionDelay: "0ms" }}>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">

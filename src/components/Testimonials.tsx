@@ -62,7 +62,7 @@ const Testimonials = () => {
     const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
     return (
-        <section id="testimonials" ref={sectionRef} className="w-full py-20 md:py-28 bg-gradient-to-br from-primary/5 to-white">
+        <section id="testimonials" ref={sectionRef} className="w-full py-16 md:py-28 bg-gradient-to-br from-primary/5 to-white">
             <div className="max-w-4xl mx-auto px-6 md:px-8">
                 <div className="text-center space-y-3 mb-14 reveal">
                     <span className="text-primary text-xs font-semibold uppercase tracking-widest">UAE Patient Stories</span>

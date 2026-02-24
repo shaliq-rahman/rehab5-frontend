@@ -44,7 +44,7 @@ const HowItWorks = () => {
     }, []);
 
     return (
-        <section id="how-it-works" ref={sectionRef} className="w-full py-20 md:py-28 bg-white">
+        <section id="how-it-works" ref={sectionRef} className="w-full py-16 md:py-28 bg-white">
             <div className="max-w-7xl mx-auto px-6 md:px-8">
                 <div className="text-center space-y-3 mb-16 reveal">
                     <span className="text-primary text-xs font-semibold uppercase tracking-widest">Simple &amp; 100% Remote</span>

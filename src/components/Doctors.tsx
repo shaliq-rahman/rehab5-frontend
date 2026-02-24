@@ -65,7 +65,7 @@ const Doctors = () => {
     }, []);
 
     return (
-        <section id="doctors" ref={sectionRef} className="w-full py-20 md:py-28 bg-slate-50/60">
+        <section id="doctors" ref={sectionRef} className="w-full py-16 md:py-28 bg-slate-50/60">
             <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <div className="max-w-7xl mx-auto px-6 md:px-8">
                 <div className="text-center space-y-3 mb-14 reveal">
@@ -87,7 +87,7 @@ const Doctors = () => {
                             style={{ transitionDelay: `${i * 100}ms` }}
                         >
                             {/* Photo */}
-                            <div className="relative h-52 bg-gradient-to-br from-primary/10 to-slate-100 overflow-hidden">
+                            <div className="relative h-44 sm:h-52 bg-gradient-to-br from-primary/10 to-slate-100 overflow-hidden">
                                 <Image
                                     src={doc.image}
                                     alt={doc.name}
