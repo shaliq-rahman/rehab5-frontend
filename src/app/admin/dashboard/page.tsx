@@ -26,6 +26,8 @@ export default function AdminDashboard() {
     const [currentPage, setCurrentPage] = useState(1);
     const [resendingId, setResendingId] = useState<number | null>(null);
     const [toastMessage, setToastMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+    const [doctorEmail, setDoctorEmail] = useState("");
+    const [savingEmail, setSavingEmail] = useState(false);
     const [selectedDate, setSelectedDate] = useState<string>("");
     const bookingsPerPage = 10;
     const router = useRouter();
@@ -65,7 +67,25 @@ export default function AdminDashboard() {
             }
         };
 
+        const fetchSettings = async () => {
+            const token = localStorage.getItem("admin_token");
+            if (!token) return;
+            try {
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+                const response = await fetch(`${apiUrl}/admin/settings`, {
+                    headers: { "Authorization": `Bearer ${token}` }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setDoctorEmail(data.doctor_email || "");
+                }
+            } catch (error) {
+                console.error("Failed to fetch settings:", error);
+            }
+        };
+
         fetchBookings();
+        fetchSettings();
     }, [router, selectedDate]);
 
     const handleLogout = () => {
@@ -100,6 +120,35 @@ export default function AdminDashboard() {
             setToastMessage({ type: 'error', text: 'Network error while sending email.' });
         } finally {
             setResendingId(null);
+            setTimeout(() => setToastMessage(null), 3000);
+        }
+    };
+
+    const handleSaveEmail = async () => {
+        setSavingEmail(true);
+        const token = localStorage.getItem("admin_token");
+        if (!token) return;
+
+        try {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+            const response = await fetch(`${apiUrl}/admin/settings`, {
+                method: "PUT",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ doctor_email: doctorEmail })
+            });
+
+            if (response.ok) {
+                setToastMessage({ type: 'success', text: 'Doctor email updated successfully!' });
+            } else {
+                setToastMessage({ type: 'error', text: 'Failed to update email.' });
+            }
+        } catch (error) {
+            setToastMessage({ type: 'error', text: 'Network error while updating email.' });
+        } finally {
+            setSavingEmail(false);
             setTimeout(() => setToastMessage(null), 3000);
         }
     };
@@ -212,6 +261,38 @@ export default function AdminDashboard() {
                             </h3>
                             <span className="text-sm font-medium text-amber-500/60">appointments</span>
                         </div>
+                    </div>
+                </div>
+
+                {/* Admin Settings */}
+                <div className="bg-white p-7 rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between animate-fade-up delay-300">
+                    <div>
+                        <h2 className="text-xl font-bold text-gray-900 tracking-tight flex items-center gap-2">
+                            <User className="w-5 h-5 text-primary" />
+                            Doctor Settings
+                        </h2>
+                        <p className="text-sm text-gray-500 mt-1">Configure the email address that will be invited to the Google Meet.</p>
+                    </div>
+                    <div className="flex w-full md:w-auto items-center gap-3">
+                        <div className="relative w-full md:w-72">
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                <Mail className="w-4 h-4" />
+                            </span>
+                            <input
+                                type="email"
+                                value={doctorEmail}
+                                onChange={(e) => setDoctorEmail(e.target.value)}
+                                placeholder="doctor@example.com"
+                                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"
+                            />
+                        </div>
+                        <button
+                            onClick={handleSaveEmail}
+                            disabled={savingEmail}
+                            className="bg-primary hover:bg-[#0d6e67] text-white px-5 py-2 rounded-xl text-sm font-semibold transition-colors shadow-sm disabled:opacity-50 min-w-[80px] flex justify-center"
+                        >
+                            {savingEmail ? <RefreshCw className="w-4 h-4 animate-spin" /> : "Save"}
+                        </button>
                     </div>
                 </div>
 
